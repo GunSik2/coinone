@@ -2,7 +2,7 @@
 ## Environment
 I used ubuntu 16.04 (64bit), and all outbound and inbound ssh port are opened. 
 
-## Install & Run Qtum 
+## Install & Test Qtumd 
 I donwloaded the [qtum image](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.0.2/qtum-0.14.3-x86_64-linux-gnu.tar.gz)
 from the [qtum github release](https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v1.0.2).
 ```
@@ -10,6 +10,8 @@ wget https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.0
 tar xvzf qtum-0.14.3-x86_64-linux-gnu.tar.gz
 ln -s qtum-0.14.3 qtum
 ```
+
+## Run Qtumd as a Linux Service
 Now check the installed qtum is working correctly.
 ```
 qtum/bin/qtumd -version
