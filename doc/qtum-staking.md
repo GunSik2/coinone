@@ -52,7 +52,7 @@ qtum/bin/qtum-cli getinfo
 ```
 
 ## Debugging
-Data and logs will be found at ~/.qtum/qtum.dat ~/.qtum/debug.log
+Data and logs will be found at ~/.qtum/wallet.dat ~/.qtum/debug.log
 
 
 ## Reference
