@@ -4,7 +4,7 @@ I used ubuntu 16.04 (64bit), and all outbound and inbound ssh port are opened.
 
 ## Install & Run Qtum 
 I donwloaded the [qtum image](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.0.2/qtum-0.14.3-x86_64-linux-gnu.tar.gz)
-from the [qtum github release](https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v1.0.2).\
+from the [qtum github release](https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v1.0.2).
 ```
 wget https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.0.2/qtum-0.14.3-x86_64-linux-gnu.tar.gz
 tar xvzf qtum-0.14.3-x86_64-linux-gnu.tar.gz
@@ -26,7 +26,7 @@ Type=forking
 User=ubuntu
 WorkingDirectory=/home/ubuntu/qtum
 ExecStart=/home/ubuntu/qtum/bin/qtumd -daemon=1 -par=2 -onlynet=ipv4 -noonion -listenonion=0 -maxconnections=24 -rpcbind=127.0.0.1 -rpcallowip=127.0.0.1
-PIDFile=/home/pi/.qtum/qtumd.pid
+PIDFile=/home/ubuntu/.qtum/qtumd.pid
 Restart=always
 RestartSec=1
 KillSignal=SIGQUIT
