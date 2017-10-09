@@ -38,7 +38,8 @@ def get_status(command):
     except subprocess.CalledProcessError as e:
         traceback.print_exc(file=sys.stdout)
         return "An error occurred while trying to execute task."
-    return "<pre> %s </pre>" %(result)
+    result = "<br />".join(result.decode().split("\n"))
+    return "<h2> %s </h2> <p/> %s" %(command, result)
 
 @app.route('/')
 def getroot():
@@ -76,6 +77,7 @@ subprocess.call(["../qtum/bin/qtum-cli", "getstakinginfo"])
 subprocess.call(["../qtum/bin/qtum-cli", "getwalletinfo"])
 
 result = subprocess.check_output("../../qtum/bin/qtum-cli getinfo", shell=True)
+result = "<br />".join(result.decode().split("\n"))
 print(result)
 ```
 
