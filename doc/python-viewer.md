@@ -6,7 +6,7 @@ This guides the python program to enable you to check qtumd status on web brower
 - virtualenv (sudo apt-get install python-virtualenv)
 
 ## prepare your virtual environment
-```
+```bash
 # create a virtualenv using python3 
 virtualenv -p /usr/bin/python3 flaskshell 
 # enter the virtualenv directory and perform the basic package installations and tasks 
@@ -21,7 +21,7 @@ mkdir src logs
 
 ## The code
 - flaskshell/src/app.py
-```
+```python
 from flask 
 import Flask from flask 
 import request 
