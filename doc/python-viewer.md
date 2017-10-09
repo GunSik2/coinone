@@ -24,7 +24,8 @@ mkdir src logs
 ```
 from flask 
 import Flask from flask 
-import request import subprocess 
+import request 
+import subprocess 
 
 @app.route('/status/')
 def get_status():
@@ -40,3 +41,6 @@ def get_status():
 if __name__ == '__main__':
     app.run()  
 ```
+
+## Reference
+- https://www.pluralsight.com/guides/python/running-shell-commands-with-flask
