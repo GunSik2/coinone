@@ -31,19 +31,37 @@ import sys, traceback
 
 app = Flask('flaskshell')
 
-@app.route('/')
-def get_status():
+def get_status(command):
     try:
-        commands = "../../qtum/bin/qtum-cli getinfo"
+        commands = "qtum-cli '{0}'".format(command)
         result = subprocess.check_output(commands, shell=True)
     except subprocess.CalledProcessError as e:
         traceback.print_exc(file=sys.stdout)
         return "An error occurred while trying to execute task."
-
     return "<pre> %s </pre>" %(result)
 
+@app.route('/')
+def getroot():
+    return """
+<a href="/getinfo">getinfo</a><p/>
+<a href="/getstakinginfo">getstakinginfo</a><p/>
+<a href="/getwalletinfo">getwalletinfo</a><p/>
+"""
+
+@app.route('/getinfo')
+def getinfo():
+    return get_status("getinfo")
+
+@app.route('/getstakinginfo')
+def getstakinginfo():
+    return get_status("getstakinginfo")
+
+@app.route('/getwalletinfo')
+def getwalletinfo():
+    return get_status("getwalletinfo")
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', use_reloader=True, debug=True)
 ```
 
 - flaskshell/src/test.py
@@ -64,8 +82,7 @@ print(result)
 ## Run the code
 - Run as command
 ```
-$ bin/python src/app.py
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+$ nohup bin/python src/app.py &
 ```
 
 - Run as a service using supervisor
