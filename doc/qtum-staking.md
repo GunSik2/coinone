@@ -2,6 +2,22 @@
 ## Environment
 I used ubuntu 16.04 (64bit), and all outbound and inbound ssh port are opened. 
 
+## Quick Run
+```
+sudo service qtumd stop
+
+sudo service qtumd start
+
+qtum-cli -stdin walletpassphrase
+> <password>
+> 999999999
+> false
+> <CTRL-D>
+
+qtum-cli getstakinginfo
+qtum-cli getinfo
+qtum-cli gettakinginfo
+```
 ## Install & Test Qtumd 
 I donwloaded the [qtum image](https://github.com/qtumproject/qtum/releases/download/mainnet-ignition-v1.0.2/qtum-0.14.3-x86_64-linux-gnu.tar.gz)
 from the [qtum github release](https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v1.0.2).
